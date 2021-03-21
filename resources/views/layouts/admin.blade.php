@@ -45,7 +45,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="{{route('shop')}}">
+            <a class="nav-link" href="{{route('home')}}">
                 <i class="fas fa-home"></i>
                 <span>Home Frontend</span></a>
         </li>
