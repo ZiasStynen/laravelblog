@@ -32,7 +32,7 @@ class AdminUsersController extends Controller
 
 
 
-        return view('admin.users.index', compact('users', 'allUsers'));
+        return view('admin.users.index', compact('users'));
     }
 
     /**

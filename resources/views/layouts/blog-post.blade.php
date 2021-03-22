@@ -237,6 +237,9 @@
 
                         @foreach($postcomments as $postcomment)
                             <li class="single_comment_area">
+                                @if($postcomment->isBestComment())
+                                    <p class="badge badge-pill badge-success">Best Comment</p>
+                                @endif
                                 <div class="comment-wrapper d-md-flex align-items-start">
                                     <!-- Comment Meta -->
                                     <div class="comment-author">
@@ -250,6 +253,17 @@
                                         <span class="comment-date
                                         font-pt">{{$postcomment->created_at->diffForhumans()}}</span>
                                         <p>{{$postcomment->body}}</p>
+                                        @can('update', $post)
+                                            <form method="POST" action="{{route('bestcomment',$postcomment->id)}}" class="text-muted btn mb-2">
+                                                @csrf
+                                                <button type="submit" class="btn text-muted p-0">
+                                                Best comment ?
+                                                </button>
+                                            </form>
+                                        @endcan
+
+
+
                                         <div id="accordion">
 
                                             <a class="reply-btn" href="#"  aria-expanded="false"
